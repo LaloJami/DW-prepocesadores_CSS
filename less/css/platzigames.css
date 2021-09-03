@@ -1,3 +1,11 @@
+.sombra-caja {
+  box-shadow: 0px 5px 15px 0px rgba(51, 51, 51, 0.5);
+}
+.Oswald {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 * {
   box-sizing: border-box;
 }
@@ -8,14 +16,16 @@ body {
   margin: 0;
   font-family: 'Lato', sans-serif;
   color: #333333;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
 }
 h1,
 h2,
 h3 {
+  margin: 0;
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
-  margin: 0;
+  font-weight: 700;
 }
 .intro {
   width: 1340px;
@@ -23,6 +33,8 @@ h3 {
   padding: 10px;
   margin: 0 auto;
   position: relative;
+  background-color: #ffffff;
+  box-shadow: 0px 5px 15px 0px rgba(51, 51, 51, 0.5);
 }
 .intro__imagen {
   width: 1320px;
@@ -46,11 +58,15 @@ h3 {
 .intro__categoria {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
 }
 .intro__titulo {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
+  font-weight: 700;
   font-size: 5rem;
+  line-height: 6rem;
 }
 .intro__autor {
   width: 150px;
@@ -71,15 +87,50 @@ h3 {
 .intro__autor span {
   display: inline-block;
 }
+.intro__autor-titulo {
+  color: rgba(255, 255, 255, 0.5);
+}
 .articulo--principal {
   max-width: 660px;
   margin: 0 auto;
 }
+.articulo--principal__intro {
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+}
 .articulo--principal h2 {
   margin: 40px 0 40px 0;
-  font-size: 5rem;
   text-align: center;
+  font-size: 5rem;
+  line-height: 6rem;
 }
 .articulo--principal h3 {
   color: #8841da;
+}
+.contenedor--cajas {
+  width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+.caja {
+  max-width: 430px;
+  box-shadow: 0px 5px 15px 0px rgba(51, 51, 51, 0.5);
+}
+.caja__contenido {
+  padding: 25px;
+  background-color: #ffffff;
+}
+.caja span {
+  color: #8841da;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.caja a {
+  text-decoration: none;
+  color: #012179;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
 }

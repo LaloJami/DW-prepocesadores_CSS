@@ -251,5 +251,24 @@ body {
 	color: @color-primario;
 	font-size: 1.6rem;
 }
-
 ```
+### Funciones 
+* transpatencia: te reduce el color y te devuelve uno nuevo en formato rgb con la transparencia o claridad del color
+```less
+color: fade(@color-claro, 50%);
+```
+### Mixin
+para usar mixin en less lo que se debe hacer es inicializar el mixin de la siguiente forma
+```less
+.nombreMixin{
+    /*Tus estilos*/
+}
+```
+se lo usa asi:
+```less
+div {
+	position: relative;
+	.nombreMixin;
+}
+```
+
