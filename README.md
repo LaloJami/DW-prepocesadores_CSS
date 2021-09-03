@@ -219,4 +219,21 @@ block contenidos
 ```
 
 
+# Sass
+
+Syntactically Awesome StyleSheets o Sass para los panas, es un preprocesador de CSS, basado en Ruby
+
+Sass nos permite usar variables , reglas anidadas , mixins y funciones.
+La razón de que en SASS usemos la extensión ‘.scss’ es porque esta nos permite usar una sintaxis muy parecida a css.
+
+La otra opción es usar SASS con la extensión ‘.sass’ la única diferencia es que con esta extensión podremos omitir las llaves ‘{}’ y los punto y coma ‘;’ después de cada valor, esta sintaxis interpretará los atributos y valores por medio de la identación.
+
+* Installar Sass
+```
+npm install -g sass
+```
+* Compilar Sass a css
+```
+sass --watch ejercicio-sass.scss ejercicio-sass.css
+```
 
