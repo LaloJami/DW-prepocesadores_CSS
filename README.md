@@ -152,3 +152,6 @@ h2 #{titulos[0]}
 h2 #{titulos[0][1]}
 ```
 
+## Condicionales y loops
+
+El each se deriva de foreach la diferencia del ciclo for es que el for le determinas cuantas vueltas tiene que dar, mientras que el foreach lee la longitud de tu arreglo “titulos” y sabe cuantas vueltas tiene que dar.
