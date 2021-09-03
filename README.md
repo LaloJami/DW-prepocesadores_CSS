@@ -219,5 +219,13 @@ block contenidos
 ```
 # Less
 
+```
+npm install -g less
+lessc styles.less styles.css
+```
+O el navegador: Importarlo al proyecto como cdn
 
-
+´´´
+<link rel="stylesheet/less" type="text/css" href="styles.less" />
+<script src="//cdn.jsdelivr.net/npm/less" ></script>
+´´´
