@@ -155,3 +155,20 @@ h2 #{titulos[0][1]}
 ## Condicionales y loops
 
 El each se deriva de foreach la diferencia del ciclo for es que el for le determinas cuantas vueltas tiene que dar, mientras que el foreach lee la longitud de tu arreglo “titulos” y sabe cuantas vueltas tiene que dar.
+## Mixin
+funciones que nos ayudan a ahorrar codigo y tiempo.
+Se lo define de la siguiente forma
+```pug
+mixin caja(imagen, titulo, contenido)
+    .caja 
+        .caja__imagen: img(src="./images/"+imagen, alt="")
+        .caja__contenido 
+            h3=titulo
+            p=contenido
+```
+se lo llama de la siguiente manera
+```pug
++caja('imagen.png', titulos[1], 'Lorem ipsum dolor sit amet consectetur adipisicing.')
+```
+## Include y extends
+
