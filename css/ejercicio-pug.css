@@ -128,3 +128,40 @@ footer li {
 	list-style: none;
 	margin: 0 20px;
 }
+
+/*----Estilos para homepage-----*/
+main {
+	display: flex;
+}
+.menu{
+	width: 20%;
+	height: 500px;
+	background-color: #EEF1F7;
+	display: flex;
+	flex-direction: column;
+}
+.menu__title{
+	margin-left: 58px;
+	margin-top: 25px;
+}
+
+.menu ul {
+	margin-left: auto;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+}
+.menu li {
+	list-style: none;
+	margin: 10px 20px;
+	color: #012179;
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+.intro-home{
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	padding: 100px;
+}
