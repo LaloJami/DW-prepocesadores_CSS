@@ -237,3 +237,43 @@ npm install -g sass
 sass --watch ejercicio-sass.scss ejercicio-sass.css
 ```
 
+## Variables
+Para declarar variables en Sass se usa $
+```css
+$Fuente1: 'Lato', sans-serif;
+$Fuente2: 'Oswald', sans-serif;
+$color-primario: #333333;
+$color-claro: #FFFFFF;
+$color-secundario: #8841DA;
+$color-variacion: #3f579a;
+```
+se usa de la siguiente manera
+```css
+body {
+	font-family: $Fuente1;
+}
+```
+## Import y extend
+
+* import: nos permite modular nuestros css
+```css
+@import "componentes/globales";
+@import "componentes/perfiles";
+@import "componentes/estadisticas";
+@import "componentes/ubicaciones";
+```
+
+* extend: nos permite copiar los estilos de una clase ya hecha anteriormente
+```css
+.perfil {
+    &__nombre {
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 2rem;
+            font-family: $Fuente2;
+        }
+}
+h2 {
+	@extend .perfil__nombre;
+}
+```
