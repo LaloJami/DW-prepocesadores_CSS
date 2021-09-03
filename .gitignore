@@ -5,3 +5,5 @@
 # ignora las imagenes
 *.png
 *.jpg
+# ignora los map
+*.map
