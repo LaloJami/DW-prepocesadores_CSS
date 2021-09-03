@@ -1,0 +1,11 @@
+mixin contenido(subtitulos)
+    main.contenido 
+        each item in subtitulos 
+            +caja(item)
+
+mixin caja(titulo)
+    .caja 
+        .caja__imagen: img(src="./images/imagen.png", alt="imagen de prueba")
+        .caja__contenido 
+            h3=titulo
+            p Lorem ipsum dolor sit amet, consectetur adipisicing.

@@ -172,3 +172,51 @@ se lo llama de la siguiente manera
 ```
 ## Include y extends
 
+* Include 
+
+head.pug
+```
+head 
+    meta(charset='UFT-8')
+    link(rel="stylesheet", href="css/ejercicio-pug.css")
+```
+landing.pug
+```
+include pug/head.pug
+```
+te trae el codigo tal cual y en la identacion donde lo invocas
+* Extend
+
+Permite agregar codigo adicional
+
+plantilla.pug
+```
+-var titulo = "Título Principal!"
+-var titulos = ["Titulo principal", "Subtitulo 1", "Subtitulo 2", "Subtitulo 3"]
+-var usuario = "Eduardo"
+mixin caja(imagen, titulo, contenido)
+    .caja 
+        .caja__imagen: img(src="./images/"+imagen, alt="")
+        .caja__contenido 
+            h3=titulo
+            p=contenido
+html 
+    include head.pug
+    body 
+        header 
+            h1 PlatziGames 
+            if usuario 
+                a hola #{usuario}
+            else
+                a.boton Registro
+        block contenidos
+```
+landing.pug
+```
+extend pug/plantilla.pug
+block contenidos
+        <desde aqui empieza tu contenido segun la identacion>
+```
+
+
+

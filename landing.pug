@@ -1,34 +1,17 @@
+include pug/head.pug
+include pug/header.pug
+include pug/intro.pug
+include pug/contenido.pug
+
 -var titulo = "Título Principal!"
--var titulos = ["Titulo principal", "Subtitulo 1", "Subtitulo 2", "Subtitulo 3"]
+-var subtitulos = ["Subtitulo 1", "Subtitulo 2", "Subtitulo 3"]
 -var usuario = "Eduardo"
-mixin caja(imagen, titulo, contenido)
-    .caja 
-        .caja__imagen: img(src="./images/"+imagen, alt="")
-        .caja__contenido 
-            h3=titulo
-            p=contenido
-html 
-    head 
-        meta(charset="UTF-8")
-        link(rel="stylesheet", href="./css/ejercicio-pug.css")
+
+
+doctype html 
+html(lang="en")
+    +headDocument("Platzi Games")
     body 
-        header 
-            h1 PlatziGames 
-            if usuario 
-                a hola #{usuario}
-            else
-                a.boton Registro
-        section.intro 
-            .intro__image 
-                img(src="./images/imagen.png")
-            .intro__contenido 
-                h2 #{titulos[0]} 
-                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat tempore quos inventore nihil quia quaerat quo iste sed quae, facere esse atque maiores recusandae a eum asperiores doloremque, rem nesciunt?
-                    span Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                a.boton Leer más
-        main.contenido 
-            +caja('imagen.png', titulos[1], 'Lorem ipsum dolor sit amet consectetur adipisicing.')
-            +caja('imagen.png', titulos[2], 'Lorem ipsum dolor sit amet consectetur adipisicing.') 
-            +caja('imagen.png', titulos[3], 'Lorem ipsum dolor sit amet consectetur adipisicing.')
-            
-        
+        +header(usuario)
+        +intro(titulo)
+        +contenido(subtitulos)
