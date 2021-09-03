@@ -6,6 +6,8 @@
 @Fuente2: 'Oswald', sans-serif;
 @fuente-base: 1.8rem;
 
+@dark-mode: true;
+
 .sombra-caja{
 	box-shadow: 0px 5px 15px 0px fade(@color-primario,50%);
 }
@@ -18,6 +20,35 @@
 	font-size: @font-size;
 	line-height: @font-size + 1;
 }
+
+.dark() when (@dark-mode = true) {
+	background-color: @color-primario;
+	color: @color-claro;
+  
+	.intro {
+	  	background-color: @color-secundario;
+	}
+  
+	.caja {
+	  span {
+		color: fade(@color-claro, 80%);
+	  }
+	}
+  
+	.caja__contenido {
+	  background-color: @color-secundario;
+	  a {
+		color: fade(@color-claro, 50%);
+	  }
+	}
+  
+	.articulo--principal {
+	  h2 {
+		color: @color-secundario;
+	  }
+	}
+}
+
 *{
 	box-sizing: border-box;
 }
@@ -27,10 +58,11 @@ html{
 body {
 	margin: 0;
 	font-family: @Fuente1;
-	color: @color-claro;
+	color: @color-primario;
 	font-size: @fuente-base;
 	.fuente(@fuente-base);
-	background-color: @color-primario;
+	background-color: @color-claro;
+	.dark;
 }
 
 h1,h2,h3 {
