@@ -116,3 +116,39 @@ ejemplo de esta guia->
 - https://atlassian.design/
 - https://www.lightningdesignsystem.com/
 
+### Pug
+Pug es un generador de templates implementado con Javascript para Node.js y navegadores.
+
+Si quieres utilizar pug sin prepros y por terminal debes:
+
+* Instalarlo
+> npm i pug-cli -g
+
+* Compilar
+> pug -w --pretty landing.pug
+
+### interpolacion 
+la interpolación es cuando se tienen variables y se le quiere concatenar texto que usualmente ser haría así
+```pug
+- var user = "Alejandra"; 
+h1 "Hola " + user + ", cómo estas?"
+```
+Se realice de la siguiente forma
+
+```Pug
+h1 Hola #{user}, cómo estas?
+```
+## Variables
+sintaxis para declarar una variable en pug
+```
+-var titulo = "Subtítulo Principal"
+-var titulos = ["Título Principal", "Subtitulo 1", "Subtitulo 2", "Subtitulo 3"]
+```
+formas de llamar las variables en pug
+```
+h2= titulo
+h2 #{titulo} 
+h2 #{titulos[0]}
+h2 #{titulos[0][1]}
+```
+

@@ -1,1 +1,6 @@
+# ignora los pdf
 *.pdf
+# ignora la carpeta node modules
+/node_modules
+# ignora las imagenes png
+*.png
