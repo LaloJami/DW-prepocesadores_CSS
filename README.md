@@ -277,3 +277,19 @@ h2 {
 	@extend .perfil__nombre;
 }
 ```
+## Mixin 
+
+El mixin es una parte de codigo que es reutilizable en nuestro proyecto
+
+* Declarar un mixin con sass
+```
+@mixin caja{
+    /* Tus estilos */
+}
+```
+Para llamar a un mixin se lo hace asi.
+```
+.estadistica--perfil {
+    @include caja;
+}
+```

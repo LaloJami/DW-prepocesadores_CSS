@@ -3,23 +3,21 @@
 	height: 90px;
 	margin: 30px auto 0 auto;
 	padding: 20px 0 0 50px;
-	border-radius: 20px;
-	background-color: $color-claro;
-	color: $color-primario;
+	@include caja;
 	i {
 		display: block;
 		float: left;
 		padding-right: 10px;
-		font-size: 40px;
+		font-size: 4rem;
 		color: $color-variacion;
 	}
-	h3{
+	h2{
 		text-transform: uppercase;
 		font-weight: 600;
 		font-size: 2rem;
 		font-family: $Fuente2;
 	}
-	h2{
+	h3{
 		text-transform: uppercase;
 		font-size: 1.2rem;
 		font-family: $Fuente2;
