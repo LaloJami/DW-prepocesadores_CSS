@@ -271,4 +271,130 @@ div {
 	.nombreMixin;
 }
 ```
+# Sass
+
+Syntactically Awesome StyleSheets o Sass para los panas, es un preprocesador de CSS, basado en Ruby
+
+Sass nos permite usar variables , reglas anidadas , mixins y funciones.
+La razón de que en SASS usemos la extensión ‘.scss’ es porque esta nos permite usar una sintaxis muy parecida a css.
+
+La otra opción es usar SASS con la extensión ‘.sass’ la única diferencia es que con esta extensión podremos omitir las llaves ‘{}’ y los punto y coma ‘;’ después de cada valor, esta sintaxis interpretará los atributos y valores por medio de la identación.
+
+* Installar Sass
+```
+npm install -g sass
+```
+* Compilar Sass a css
+```
+sass --watch ejercicio-sass.scss ejercicio-sass.css
+```
+
+## Variables
+Para declarar variables en Sass se usa $
+```css
+$Fuente1: 'Lato', sans-serif;
+$Fuente2: 'Oswald', sans-serif;
+$color-primario: #333333;
+$color-claro: #FFFFFF;
+$color-secundario: #8841DA;
+$color-variacion: #3f579a;
+```
+se usa de la siguiente manera
+```css
+body {
+	font-family: $Fuente1;
+}
+```
+## Import y extend
+
+* import: nos permite modular nuestros css
+    * los archivos modulares se los guarda con extension .scss para que el compilador de sass no los compile
+    * a los archivos modulares se les agrega el ``_`` al inicio de cada nombre, ejemplo: ``_globales.scss`` y tambien sirve para decirle al compilador que no cree un archivo css por cada modulo.
+```css
+@import "componentes/globales";
+@import "componentes/perfiles";
+@import "componentes/estadisticas";
+@import "componentes/ubicaciones";
+```
+
+* extend: nos permite copiar los estilos de una clase ya hecha anteriormente
+```css
+.perfil {
+    &__nombre {
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 2rem;
+            font-family: $Fuente2;
+        }
+}
+h2 {
+	@extend .perfil__nombre;
+}
+```
+## Mixin 
+
+El mixin es una parte de codigo que es reutilizable en nuestro proyecto
+
+* Declarar un mixin con sass
+```
+@mixin caja{
+    /* Tus estilos */
+}
+```
+Para llamar a un mixin se lo hace asi.
+```
+.estadistica--perfil {
+    @include caja;
+}
+```
+
+# Funciones
+
+Para crear funciones se sigue la siguiente nomenclatura
+
+```
+@function get-opacity($color, $nivel){
+    @return rgba($color, $nivel);
+}
+```
+y para llamar a una funcion se hace lo siguiente
+```
+a {
+    color: get-opacity($color-claro, .50);
+}
+```
+
+## Condicionales y loop
+
+nos permiten correr cierto pedazo de codico hasta que la condicion es alcanzada
+para leer mas sobre esto haz click [aqui](https://sass-lang.com/documentation/at-rules/control/each) 
+
+* loops
+```
+@each $header, $size in (h1: 3rem, h2: 2.5rem, h3: 2rem) {
+    #{$header} {
+        font-size: $size;
+        margin: 0;
+    }
+}
+```
+Los loops corren por defecto, no es necesario llamarlos
+* condicionales
+Los condicionales se los realiza dentro de los mixin
+```
+@mixin titulos($fuente) {
+    @if $fuente==$Fuente1 {
+        font-family: $Fuente1;
+    } @else{
+        font-family: $Fuente2;
+        text-transform: uppercase;
+    }
+}
+```
+para llamar a un condicional se lo hace de la siguiente forma
+```
+body {
+	@include titulos($Fuente1);
+}
+```
 

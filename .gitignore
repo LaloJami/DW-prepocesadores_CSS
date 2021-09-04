@@ -2,7 +2,8 @@
 *.pdf
 # ignora la carpeta node modules
 /node_modules
-# ignora las imagenes png
+# ignora las imagenes
 *.png
-# ignora las imagenes jpg
 *.jpg
+# ignora los map
+*.map
