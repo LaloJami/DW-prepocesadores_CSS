@@ -311,3 +311,38 @@ a {
     color: get-opacity($color-claro, .50);
 }
 ```
+
+## Condicionales y loop
+
+nos permiten correr cierto pedazo de codico hasta que la condicion es alcanzada
+para leer mas sobre esto haz click [aqui](https://sass-lang.com/documentation/at-rules/control/each) 
+
+* loops
+```
+@each $header, $size in (h1: 3rem, h2: 2.5rem, h3: 2rem) {
+    #{$header} {
+        font-size: $size;
+        margin: 0;
+    }
+}
+```
+Los loops corren por defecto, no es necesario llamarlos
+* condicionales
+Los condicionales se los realiza dentro de los mixin
+```
+@mixin titulos($fuente) {
+    @if $fuente==$Fuente1 {
+        font-family: $Fuente1;
+    } @else{
+        font-family: $Fuente2;
+        text-transform: uppercase;
+    }
+}
+```
+para llamar a un condicional se lo hace de la siguiente forma
+```
+body {
+	@include titulos($Fuente1);
+}
+```
+
