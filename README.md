@@ -397,4 +397,84 @@ body {
 	@include titulos($Fuente1);
 }
 ```
+# Stylus
+Es un preprocesador de hojas de estilos dinámico que se compila en CSS
+Escrito en JADE y Node.js
+Creado por TJ Holowaychuk, Ex programador de Node.js
+
+Instalar Stylus en la terminal
+```
+npm install -g stylus
+```
+Compilar de Stylus a Css
+```
+stylus -w ejercicio-stylus.styl
+```
+* -w hace que espere los cambios para poder compilar automaticamente.
+
+Estylus no necesita de corchetes o ;
+lo que necesita es identacion
+
+## Variables
+
+Para declara variables se lo realiza de la siguiente forma
+
+```stylus
+Fuente1 = 'Lato', sans-serif
+Fuente2 = 'Oswald', sans-serif
+color-primario = #333333
+color-secundario = #8841DA
+color-claro = #FFFFFF
+```
+
+y se las llama de la siguiente forma
+```
+body
+	font-family: Fuente1
+```
+## Mixin
+Sirven para reutilizar el codigo y se lo llama asi:
+```
+nombre-mixin()
+	// Tus estilos
+```
+se lo llama de la siguiente forma
+```
+.caja
+	max-width 400px
+	caja-sombra()
+```
+> Importante: recuerda que los mixin siempre se ponen al final de todos tus estilos.
+
+## import
+nos ayuda a tener componentes y tener nuestro codigo segmentado
+para ello creamos dentro de la carpeta css otra llamada componentes, ahi creamos archivos .styl que es la extension de stylus.
+en el archivo principal dentro de css llamamos a nuestros componentes, importante recordar que primero siempre hay que llamar a los estilos globales (caso contrario tus estilos pueden salir con errores)
+para llamar a estos componentes usamos el import
+```
+@import "componentes/globales.styl";
+@import "componentes/buscadores.styl";
+@import "componentes/filtros.styl";
+@import "componentes/cajas.styl";
+```
+
+## Funciones
+Nos ayudan a definir "operaciones" que nos ayudaran a la hora de hacer nuestros estilos
+
+```
+opacidad(color, cantidad){
+    alpha(color, cantidad)
+}
+```
+> Normalmente no se deberia poner los {} pero si te arroja un error de ``Cannot read property 'r' of undefined`` te sugiero usarla
+
+se lo usa asi
+```
+li 
+    list-style none
+    color: opacidad(color-primario, .30)
+```
+Tambien hay funciones predefinidas
+para aprender de ellas lea la documentación de stylus
+https://stylus-lang.com/docs/functions.html
 
