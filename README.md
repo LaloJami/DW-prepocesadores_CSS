@@ -296,4 +296,6 @@ li
     color: opacidad(color-primario, .30)
 ```
 Tambien hay funciones predefinidas
+para aprender de ellas lea la documentación de stylus
+https://stylus-lang.com/docs/functions.html
 
