@@ -30,7 +30,31 @@ body {
 main {
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+}
+main .perfil {
+  background-color: #8841DA;
+  color: #FFFFFF;
+}
+main .perfil__nombre, main .perfil__minibio h2, .perfil__minibio main h2 {
+  color: #FFFFFF;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+}
+main .perfil__titulo, main .perfil__minibio h3, .perfil__minibio main h3 {
+  color: #FFFFFF;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+}
+main .perfil__boton {
+  background-color: #333333;
+  color: #FFFFFF;
+}
+main .articulos {
+  background-color: #FFFFFF;
+}
+main .articulo {
+  color: #333333;
 }
 
 .perfil {
@@ -62,7 +86,7 @@ main {
   width: 100px;
   height: 40px;
   margin: 15px auto;
-  padding-top: 15px;
+  padding: 5px;
   border-radius: 20px;
   text-decoration: none;
   text-align: center;
