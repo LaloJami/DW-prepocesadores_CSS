@@ -256,6 +256,8 @@ body {
 ## Import y extend
 
 * import: nos permite modular nuestros css
+    * los archivos modulares se los guarda con extension .scss para que el compilador de sass no los compile
+    * a los archivos modulares se les agrega el ``_`` al inicio de cada nombre, ejemplo: ``_globales.scss`` y tambien sirve para decirle al compilador que no cree un archivo css por cada modulo.
 ```css
 @import "componentes/globales";
 @import "componentes/perfiles";
@@ -291,5 +293,21 @@ Para llamar a un mixin se lo hace asi.
 ```
 .estadistica--perfil {
     @include caja;
+}
+```
+
+# Funciones
+
+Para crear funciones se sigue la siguiente nomenclatura
+
+```
+@function get-opacity($color, $nivel){
+    @return rgba($color, $nivel);
+}
+```
+y para llamar a una funcion se hace lo siguiente
+```
+a {
+    color: get-opacity($color-claro, .50);
 }
 ```
