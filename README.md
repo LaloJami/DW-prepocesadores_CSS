@@ -126,7 +126,7 @@ Si quieres utilizar pug sin prepros y por terminal debes:
 
 * Compilar
 > pug -w --pretty landing.pug
-
+> pug -w --pretty pagina-principal.pug -o ../html
 ### interpolacion 
 la interpolación es cuando se tienen variables y se le quiere concatenar texto que usualmente ser haría así
 ```pug
